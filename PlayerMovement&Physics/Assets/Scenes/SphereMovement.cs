@@ -7,7 +7,7 @@ public class SphereMovement : MonoBehaviour
 
         float xStart = 0;
         float yStart = 0;
-        float zStart = 50;
+        float zStart = 200;
 
         Vector3 StartPos = new Vector3(xStart, zStart, yStart);
 
@@ -29,7 +29,7 @@ public class SphereMovement : MonoBehaviour
         if(Input.GetKey("space")){
             z += 1;
         }
-        if(Input.GetKey(KeyCode.LeftShift)){
+        if(Input.GetKey(KeyCode.LeftShift) && z <= 0){
             z -= 1;
         }
 
