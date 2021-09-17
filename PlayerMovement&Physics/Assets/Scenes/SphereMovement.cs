@@ -14,7 +14,7 @@ public class SphereMovement : MonoBehaviour
         transform.position = StartPos;
     }
 
-    //some floats that will be used later in the
+    //some floats that will be used later in the program
     public float speed = 0.1f;
     public float z = 0f;
 
@@ -25,7 +25,7 @@ public class SphereMovement : MonoBehaviour
         float y = Input.GetAxis("Vertical");
 
 
-        //BROKEN!!!!!
+        //Up and Down movement is currently broken (Issue: once "GetKey" has returned true, it will never return false)
         if(Input.GetKey("space")){
             z += 1;
         }
@@ -33,8 +33,10 @@ public class SphereMovement : MonoBehaviour
             z -= 1;
         }
 
+        //Creates a new Vector3 object to contain the current positioning of the Shpere
         Vector3 moveDirection = new Vector3(x, z, y);
 
+        //updates the positon of the Sphere every frame
         transform.position += moveDirection * speed;
     }
 }
